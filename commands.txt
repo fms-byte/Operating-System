@@ -1,0 +1,177 @@
+﻿Sample commands and practising exercises for the upcoming exam
+
+create file: touch filename
+edit file: nano filename
+save file: ctrl + o, ctrl + x
+read file: cat filename
+running bashfile: bash filename
+rename a file: mv current_filename new_filename
+print current directory: pwd
+back: cd ..
+renamebash: bash rename_all_files.sh /home/farhan/Documents/shell_script/rename
+calender- cal
+date and time- date
+os name-uname
+copy- cp filename fileDestination
+move- mv filename fileDestination
+compare 2 file line by line- diff filename1 filename2
+sudo-super user do
+sudo apt-get install url/name
+sudo apt-get update
+ping url
+ifconfig/ip addr
+ps- process state
+uptime -running time
+which -a commandName; command location
+shutdown/exit
+tar cvf filename.tar filepath -compress
+tar xvf filename.tar filepath -extract
+zip -r filename.zip path
+unzip filename.zip
+find . -name filename //search in current location
+find /home . -name filename //search from home
+find .-type f -name filename
+grep -w "wordname" filename //search in text
+grep -n "wordname" filename //search in text with line number
+grep -v "wordname" filename //search in text not containing "wordname"
+grep -c "wordname" filename //search in text count number of that word
+ls -l //list all files with details
+ls -l filename
+chmod u=x (username) filename //giving read write access to user
+chmod u-x (username) filename //remove access permission
+chmod u-r (username) filename //remove read permission
+chmod u-w (username) filename //remove write permission
+sed -i 's/oldtext/newtext/g' filename // find word and replace
+sed -i 's/oldtext/newtext/g' filename > newfilename // find word and replace and store in newfile
+
+
+1. To create a directory use mkdir command:  mkdir directory_name
+
+2. To delete a directory use rmdir command: rmdir directory_name
+
+3. To change directory from one location to another use cd command: cd directory_name with path location
+
+4. To show the list of directories and files in a current directory use ls command: ls
+ 
+5. To copy contents of one file to another, use the cp command: cp test.txt copytest.txt
+
+6. To move/cut files from one location to another use rm command: rm your file_name destination path location
+
+7. Create File:  touch file1 file2 file3, which creates three files in your current directory.
+    
+8. To display the contents of the file, use the cat (short for concatenation) command:  cat test.txt
+
+9. A file can be renamed by moving it. The same can be achieved by using the mv command: mv test3.txt newtest3.txt
+
+10. grep: The grep command is used to search text. It searches the given file for lines containing a match to the given strings or words. It is one of the most useful commands on Linux and Unix-like system. Let us see how to use grep on a Linux or Unix like system.
+
+grep [options] pattern [file-list]
+
+
+11. head: Displays the beginning of a file.
+
+head [options] [file-list]
+
+12. join: Joins lines from two files based on a common field
+
+join [options] file1 file2
+
+13. sort: Sorts and/or merges files
+
+sort [options] [file-list]
+
+14. tail: Displays the last part (tail) of a file
+
+tail [options] [file-list]
+
+15. uniq: Displays unique lines from a file
+
+uniq [options] [input-file] [output-file]
+
+16. diff: The diff (difference) utility compares two files and displays a list of the differences between them.
+
+
+17. file: file command is used to determine the type of a file. .file type may be of human-readable(e.g. ‘ASCII text’) or MIME type(e.g. ‘text/plain; charset=us-ascii’)
+
+
+
+
+
+
+
+
+
+
+
+Practice exercises (important, sheel scripting)
+1. Suppose you are in Document directory. So Open Last Edited File in that directory. - ls -lt ; to open file: xdg-open filename
+
+2. Print all the system information in the following order: Kernel name, network node hostname, kernel release date, kernel version, machine hardware name, hardware platform, operating system:
+
+# Kernel name
+echo "Kernel Name: $(uname -s)"
+
+# Network node hostname
+echo "Hostname: $(uname -n)"
+
+# Kernel release date
+echo "Kernel Release Date: $(uname -v)"
+
+# Kernel version
+echo "Kernel Version: $(uname -r)"
+
+# Machine hardware name
+echo "Machine Hardware: $(uname -m)"
+
+# Hardware platform
+echo "Hardware Platform: $(uname -i)"
+
+# Operating System
+echo "Operating System: $(lsb_release -d -s)"
+
+
+3. Display content in reverse order of a file: tac filename or tail -r filename
+
+4. Display the current date in the form of dd/mm/yy.: date +'%d/%m/%y'
+
+5. How do your display both date and time in the format of dd-mm-yy/hh.mm.ss?: date +'%d-%m-%y/%H.%M.%S'
+
+
+6.  Copy a file from Desktop to a directory under Documents directory.: cp ~/Desktop/myfile.txt ~/Documents/mydir/
+
+
+7. Make a directory in Pictures with the name My Photos.: mkdir ~/Pictures/My\ Photos
+
+8. Search through the memo file for lines that contain the string credit and displays the single line that meets this criterion.: grep 'credit' memo
+
+9. Let us assume there are two files file1.txt and file2.txt and we want to combine the contents of these two files.  Furthermore, create a new file with the joined contents.: cat file1.txt file2.txt > combined.txt
+
+
+10. Removes all the duplicate lines in a text file.: sort input.txt | uniq > output.txt
+
+11. Let's say you have a file, data.txt, which contains the following ASCII text:
+apples
+oranges
+pears
+kiwis
+bananas
+Sort the contents in the file in reverse alphabetic order (descending order).
+: sort -r data.txt -o data.txt
+
+
+12. Find the string “the” containing in a text file name “myfile.txt”.: grep 'the' myfile.txt
+
+
+13. Order Files Based on Last Modified Time (In Reverse Order).:
+cd /path/to/your/directory
+ls -t -r
+
+14. Recursively remove all files and directories under the example directory.: rm -rf /path/to/example
+
+
+15. Display the file contents with the line number to each line of the output.: nl filename
+
+
+16. Create a directory called temp under your home directory.: mkdir ~/temp
+
+17. View all the network interfaces along with status.: ifconfig -a or ip link show
